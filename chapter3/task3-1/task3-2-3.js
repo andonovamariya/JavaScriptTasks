@@ -1,5 +1,5 @@
-const array1 = [1, undefined, [1, 2, 3], "test", { name: "John Doe" }];
-const array2 = [
+const firstarray = [1, undefined, [1, 2, 3], "test", { name: "John Doe" }];
+const secondArray = [
   null,
   () => {
     console.log("Hello,  world!");
@@ -9,19 +9,18 @@ const array2 = [
   6,
 ];
 
-Array.prototype.appendTruthyValues = function (array1, array2) {
-  const firstFoundArrayElement = array1.find((element) => {
+Array.prototype.appendTruthyValues = function (array) {
+  const firstFoundArrayElement = this.find((element) => {
     return Array.isArray(element);
   });
 
-  for (let i = 0; i < array2.length; i++) {
-    if (array2[i]) {
-      firstFoundArrayElement.push(array2[i]);
+  for (let i = 0; i < array.length; i++) {
+    if (array[i]) {
+      firstFoundArrayElement.push(array[i]);
     }
   }
-
-  return array1;
+  return this;
 };
 
-const truthyValues = array1.appendTruthyValues(array1, array2);
+const truthyValues = firstarray.appendTruthyValues(secondArray);
 console.log(truthyValues);

@@ -1,4 +1,4 @@
-const arr = [
+const array = [
   6,
   "Test",
   "value",
@@ -7,7 +7,7 @@ const arr = [
   null,
   { name: "john.doe", role: "admin" },
 ];
-const INPUTWEIGHT = 50;
+const INPUT_WEIGHT = 12;
 
 const getArrayWeight = (array) => {
   let weight = 0;
@@ -45,4 +45,4 @@ const higherWeightThan = (inputWeight, weight) => {
     return `The answer is ${false}, the inputted weight is ${inputWeight}, the weight of the elements in the array is ${weight}.`;
 };
 
-console.log(higherWeightThan(INPUTWEIGHT, getArrayWeight(arr)));
+console.log(higherWeightThan(INPUT_WEIGHT, getArrayWeight(array)));

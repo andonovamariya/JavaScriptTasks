@@ -14,18 +14,18 @@ const array = [
   { name: "John Doe" },
 ];
 
-const checkIfObjectIsPresentDeep = (arr, obj) => {
-  if (!arr || !obj || arr.length === 0) {
+const checkIfObjectIsPresentDeep = (array, object) => {
+  if (!array || !object || array.length === 0) {
     return false;
   }
 
   return (
-    arr.includes(obj) ||
-    !!arr.find(
+    array.includes(object) ||
+    !!array.find(
       (item) =>
         item &&
         typeof item === "object" &&
-        findObj(Array.isArray(item) ? item : Object.values(item), person)
+        findObj(Array.isArray(item) ? item : Object.values(item), object)
     )
   );
 };

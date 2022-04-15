@@ -16,15 +16,18 @@ const array = [
   5,
 ];
 
-const flatten = (arr, parentKey = 1, result = []) => {
-  Object.entries(arr).forEach(([key, value]) => {
-    const propertyName = parentKey ? parentKey + "_" + key : key;
-    if (typeof arr[key] === "object") {
-      flatten(arr[key], propertyName, result);
+const flatten = (element) => {
+  let result = {};
+  for (const i in element) {
+    if (typeof element[i] === "object") {
+      const recursedElement = flatten(element[i]);
+      for (const j in recursedElement) {
+        result[i + "_" + j] = recursedElement[j];
+      }
     } else {
-      result[propertyName] = arr[key];
+      result[i] = element[i];
     }
-  });
+  }
   return result;
 };
 console.log(flatten(array));

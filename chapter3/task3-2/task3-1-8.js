@@ -1,8 +1,8 @@
 const DATE1 = new Date("2020/11/12 12:00:00");
 const DATE2 = new Date("2022/12/31 13:40:59");
 
-Date.prototype.getDatesDifference = function (date1, date2) {
-  const dateDifference = new Date(Math.abs(date2 - date1));
+Date.prototype.getDatesDifference = function (anotherDate) {
+  const dateDifference = new Date(Math.abs(anotherDate - this));
 
   const years = dateDifference.getUTCFullYear() - 1970;
   const months = dateDifference.getUTCMonth();
@@ -21,8 +21,8 @@ Date.prototype.getDatesDifference = function (date1, date2) {
     (minutes > 0 && minutes + (seconds > 30) + " minute(s)") ||
     (seconds > 0 && seconds + " second(s)");
 
-  console.log(date1.toString());
-  console.log(date2.toString());
+  console.log(this.toString());
+  console.log(anotherDate.toString());
 
   console.log(
     `${years} years, ${months} months, ${days} days, ${hours} hours, ${minutes} minutes, ${seconds} seconds`
@@ -30,5 +30,5 @@ Date.prototype.getDatesDifference = function (date1, date2) {
   return finalDifference ? `${finalDifference} ago` : "dates are equal";
 };
 
-const datesDifference = DATE1.getDatesDifference(DATE1, DATE2);
+const datesDifference = DATE1.getDatesDifference(DATE2);
 console.log(datesDifference);

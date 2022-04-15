@@ -14,21 +14,21 @@ const array = [
   { name: "John Doe" },
 ];
 
-Array.prototype.checkIfObjectIsPresentDeep = function (arr, obj) {
-  if (!arr || !obj || arr.length === 0) {
+Array.prototype.checkIfObjectIsPresentDeep = function (object) {
+  if (!this || !object || !this.length === 0) {
     return false;
   }
 
   return (
-    arr.includes(obj) ||
-    !!arr.find(
+    this.includes(object) ||
+    !!this.find(
       (item) =>
         item &&
         typeof item === "object" &&
-        findObj(Array.isArray(item) ? item : Object.values(item), person)
+        findObj(Array.isArray(item) ? item : Object.values(item), object)
     )
   );
 };
 
-const isObjectPresent = array.checkIfObjectIsPresentDeep(array, person);
+const isObjectPresent = array.checkIfObjectIsPresentDeep(person);
 console.log(isObjectPresent);

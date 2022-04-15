@@ -1,5 +1,5 @@
-const array1 = [1, undefined, [1, 2, 3], "test", { name: "John Doe" }];
-const array2 = [
+const firstArray = [1, undefined, [1, 2, 3], "test", { name: "John Doe" }];
+const secondArray = [
   null,
   () => {
     console.log("Hello,  world!");
@@ -9,18 +9,18 @@ const array2 = [
   6,
 ];
 
-const firstFoundArrayElement = array1.find((element) => {
+const firstFoundArrayElement = firstArray.find((element) => {
   return Array.isArray(element);
 });
 
-const appender = (firstFoundArrayElement, array2) => {
-  for (let i = 0; i < array2.length; i++) {
-    if (array2[i]) {
-      firstFoundArrayElement.push(array2[i]);
+const appender = (firstFoundArrayElement, secondArray) => {
+  for (let i = 0; i < secondArray.length; i++) {
+    if (secondArray[i]) {
+      firstFoundArrayElement.push(secondArray[i]);
     }
   }
 
-  return array1;
+  return firstArray;
 };
 
-console.log(appender(firstFoundArrayElement, array2));
+console.log(appender(firstFoundArrayElement, secondArray));

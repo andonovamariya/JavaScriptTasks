@@ -1,15 +1,19 @@
-const arr = [
+const array = [
   6,
   "Test",
   "value",
   1,
   undefined,
   null,
-  { name: "john.doe", role: "admin" },
+  {
+    name: "john.doe",
+    role: "admim",
+  },
 ];
-const INPUTWEIGHT = 2;
+const INPUT_WEIGHT = 16;
 
-const getObjectWeight = (array) => {
+const getValuesWeight = (array) => {
+  let countersArray = [];
   let nullWeight = 0,
     objectWeight = 0,
     stringWeight = 0,
@@ -36,44 +40,35 @@ const getObjectWeight = (array) => {
       booleanWeight += 4;
     } else if (array[i] instanceof Date) {
       dateWeight += 5;
-    } else
+    } else {
       console.log("Wasn't able to find a corresponding value in the array");
-  }
-  /*
-  arrayWeights.push(
-    { nullWeight: nullWeight },
-    { objectWeight: objectWeight },
-    { stringWeight: stringWeight },
-    { numberWeight: numberWeight },
-    { undefinedWeight: undefinedWeight }
-  );
-  */
-
-  const OBJECT_WITH_WEIGHTS = {};
-  OBJECT_WITH_WEIGHTS.nullWeight = nullWeight;
-  OBJECT_WITH_WEIGHTS.objectWeight = objectWeight;
-  OBJECT_WITH_WEIGHTS.stringWeight = stringWeight;
-  OBJECT_WITH_WEIGHTS.numberWeight = numberWeight;
-  OBJECT_WITH_WEIGHTS.undefinedWeight = undefinedWeight;
-  /*OBJECT_WITH_WEIGHTS.push({
-    nullWeight: nullWeight,
-    objectWeight: objectWeight,
-    stringWeight: stringWeight,
-    numberWeight: numberWeight,
-    undefinedWeight: undefinedWeight,
-  });*/
-  return OBJECT_WITH_WEIGHTS;
-};
-
-const equalWeight = (inputWeight, obj) => {
-  console.log("Objects weight:\n", obj);
-  for (const property in obj) {
-    if (obj[property] === inputWeight) {
-      return true;
-    } else if (obj[property] !== inputWeight) {
-      return false;
     }
   }
+  countersArray.push(
+    nullWeight,
+    objectWeight,
+    stringWeight,
+    numberWeight,
+    undefinedWeight,
+    booleanWeight,
+    dateWeight
+  );
+  return countersArray;
 };
 
-console.log(equalWeight(INPUTWEIGHT, getObjectWeight(arr)));
+const checkForEquality = (countersArray, inputWeight) => {
+  let answer = false;
+  for (let i = 0; i < countersArray.length; i++) {
+    if (countersArray[i] === inputWeight) {
+      answer = true;
+    } 
+  } 
+  if (answer) {
+    console.log("There is a value in the array which is equal to the inputted one.");
+  } else {
+    console.log("There is NOT a value in the array which is equal to the inputted one.");
+  }
+};
+const OBJECT_WEIGHT = getValuesWeight(array);
+console.log(OBJECT_WEIGHT);
+console.log(checkForEquality(OBJECT_WEIGHT, INPUT_WEIGHT));

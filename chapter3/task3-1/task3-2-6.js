@@ -3,12 +3,12 @@ const array = [
 ];
 const PERCENT = 50;
 
-Array.prototype.removeInnerPercentage = function (array, percent) {
-  let percentage = (percent / 100) * array.length;
+Array.prototype.removeInnerPercentage = function (percent) {
+  let percentage = (percent / 100) * this.length;
   const middle = Math.floor(percentage / 2);
-  result = [...array.slice(0, middle), ...array.slice(-middle)];
+  result = [...this.slice(0, middle), ...this.slice(-middle)];
   return result;
 };
 
-const arrayWithoutInnerPercentage = array.removeInnerPercentage(array, PERCENT);
+const arrayWithoutInnerPercentage = array.removeInnerPercentage(PERCENT);
 console.log(arrayWithoutInnerPercentage);

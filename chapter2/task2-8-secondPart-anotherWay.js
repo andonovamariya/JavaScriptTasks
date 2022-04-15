@@ -1,4 +1,4 @@
-const arr = [
+const array = [
   6,
   "Test",
   "value",
@@ -7,7 +7,7 @@ const arr = [
   null,
   { name: "john.doe", role: "admin" },
 ];
-const INPUTWEIGHT = 2;
+const INPUT_WEIGHT = 2;
 
 const typeOfFunction = {
   nullType: (val) => val == undefined,
@@ -27,7 +27,6 @@ const getTypeKey = (value) => {
     return func(value);
   });
   const [key] = item || [];
-
   return key;
 };
 
@@ -51,9 +50,9 @@ const betterWeightCounter = (object) =>
 const checkForEquality = (counter, inputWeight) => {
   if (counter === inputWeight) {
     return true;
-  } else if (counter !== inputWeight) {
+  } else {
     return false;
   }
 };
 
-console.log(checkForEquality(betterWeightCounter(arr), INPUTWEIGHT));
+console.log(checkForEquality(betterWeightCounter(array), INPUT_WEIGHT));

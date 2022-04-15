@@ -11,7 +11,6 @@ Array.prototype.bubbleSort = function () {
       }
     }
   }
-
   return this;
 };
 

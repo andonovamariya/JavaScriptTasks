@@ -1,0 +1,23 @@
+{
+  "name": "javascripttasks",
+  "version": "1.0.0",
+  "description": "",
+  "main": "task3-5.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "lite-server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/andonovamariya/JavaScriptTasks.git"
+  },
+  "author": "Mariya Andonova",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/andonovamariya/JavaScriptTasks/issues"
+  },
+  "homepage": "https://github.com/andonovamariya/JavaScriptTasks#readme",
+  "devDependencies": {
+    "lite-server": "^2.6.1"
+  }
+}

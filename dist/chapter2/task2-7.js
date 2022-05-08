@@ -1,7 +1,8 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
-const randomizeArray = (array) => {
+const randomizeArray = (chosenArray) => {
+    let array = chosenArray;
     let randomizedArray = array.sort((a, b) => 0.5 - Math.random());
     return randomizedArray;
 };

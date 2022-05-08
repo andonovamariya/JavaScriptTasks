@@ -1,5 +1,5 @@
 "use strict";
-const obj = {
+const personObject = {
     person: {
         firstName: "John",
         lastName: "Doe",
@@ -29,4 +29,4 @@ function createDeepCopy() {
     return outObject;
 }
 Object.prototype.deepCopyOfObject = createDeepCopy;
-console.log(obj.deepCopyOfObject());
+console.log(personObject.deepCopyOfObject());

@@ -2,7 +2,7 @@ interface Date {
   formatDateByString(stringFormat: string): string;
 }
 const DATE: Date = new Date();
-const STRING: string = "YYYY-MM-DD HH:mm:ss Is my proof of concept a A!";
+const STRING = "YYYY-MM-DD HH:mm:ss Is my proof of concept a A!\nMMMM - getMonthLongName\nMMM - getMonthShortName\nM - getMonth\nDo - getDayOfMonth\nDD - getDate\nD - getDate\ndddd - getDayLongName\nddd - getDayShort\ngetQuarter - Q\nW - getWeekOfYear";
 
 Date.prototype.formatDateByString = function formatDateByString(
   chosenString: string
@@ -37,23 +37,41 @@ Date.prototype.formatDateByString = function formatDateByString(
   ];
 
   const getDayShortName = (date: Date): string => {
-    const index = date.getDay();
-    return dayOfWeekName[index - 1].substring(0, 3);
+    const index: number = date.getDay();
+    if (index !== 0) {
+      return dayOfWeekName[index - 1].substring(0, 3);
+    } else {
+      return "Sun";
+    }
   };
 
   const getDayLongName = (date: Date): string => {
-    const index = date.getDay();
-    return dayOfWeekName[index - 1];
+    const index: number = date.getDay();
+    if (index !== 0) {
+      return dayOfWeekName[index - 1];
+    } else {
+      return "Sunday";
+    }
   };
 
   const getMonthShortName = (date: Date): string => {
-    const index = date.getMonth();
-    return monthName[index].substring(0, 3);
+    const index: number = date.getMonth();
+    if (index !== 0) {
+      return monthName[index-1].substring(0, 3);
+    } else {
+      return "Jan";
+    }
+    
   };
 
   const getMonthLongName = (date: Date): string => {
-    const index = date.getMonth();
-    return monthName[index];
+    const index: number = date.getMonth();
+    if (index !== 0) {
+      return monthName[index-1];
+    } else {
+      return "January";
+    }
+    
   };
 
   type Quarter = 1 | 2 | 3 | 4;
@@ -84,9 +102,10 @@ Date.prototype.formatDateByString = function formatDateByString(
   };
 
   const getWeekOfYear = (): number => {
-    const janFirst = new Date(date.getFullYear(), 0, 1);
-    let numberOfDays = Math.floor((+date - +janFirst) / (24 * 60 * 60 * 1000));
-    return Math.ceil((date.getDay() + 1 + numberOfDays) / 7);
+    const janFirst: Date = new Date(date.getFullYear(), 0, 1);
+    const numberOfDays: number = Math.floor((+date - +janFirst) / (24 * 60 * 60 * 1000));
+    const calculatedWeekOfYear: number =  Math.ceil((date.getDay() + 1 + numberOfDays) / 7);
+    return calculatedWeekOfYear;
   };
 
   const dateTokens = {
@@ -113,7 +132,7 @@ Date.prototype.formatDateByString = function formatDateByString(
   };
 
   return Object.entries(dateTokens).reduce((result, [token, func]) => {
-    return result.replace(token, func(date).toString());
+    return result.replace(token, func(date));
   }, stringFormat);
 };
 

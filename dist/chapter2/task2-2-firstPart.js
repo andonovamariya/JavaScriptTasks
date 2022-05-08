@@ -15,8 +15,9 @@ const array = [
     { count: 5 },
     { name: "John Doe" },
 ];
-const checkIfObjectIsIncluded = (array, person) => {
-    if (array.includes(person)) {
+const checkIfObjectIsIncluded = (chosenArray, person) => {
+    let array = chosenArray, object = person;
+    if (array.includes(object)) {
         return "The object is included in the array.";
     }
     else {

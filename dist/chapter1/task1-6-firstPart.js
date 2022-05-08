@@ -13,7 +13,8 @@ const findLongestWord = (stringFormat) => {
 };
 console.log(findLongestWord(SENTENCE));
 const sortLongestWord = (chosenString) => {
-    let string = chosenString, longestWord = string
+    let string = chosenString;
+    let longestWord = string
         .replace(FORMAT, "")
         .split(" ")
         .sort(function (a, b) {
@@ -22,7 +23,8 @@ const sortLongestWord = (chosenString) => {
     return longestWord[0];
 };
 console.log(sortLongestWord(SENTENCE));
-const findLongestWordWithReduce = (chosentri) => {
+const findLongestWordWithReduce = (chosenString) => {
+    let string = chosenString;
     let wordSplit = string.replace(FORMAT, "").split(" ");
     let longestWord = wordSplit.reduce(function (longestWord, currentWord) {
         if (longestWord.length < currentWord.length) {

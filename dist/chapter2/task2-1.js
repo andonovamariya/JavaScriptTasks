@@ -2,18 +2,20 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 const array = [6, 4, 3, 1, 9, 44, 33, 2];
 const sortBubble = (chosenArray) => {
-    for (let i = 0; i < chosenArray.length; i++) {
-        for (let j = 0; j < chosenArray.length; j++) {
-            if (chosenArray[j] > chosenArray[j + 1]) {
-                let l = chosenArray[j];
-                chosenArray[j] = chosenArray[j + 1];
-                chosenArray[j + 1] = l;
+    let array = chosenArray;
+    for (let i = 0; i < array.length; i++) {
+        for (let j = 0; j < array.length; j++) {
+            if (array[j] > array[j + 1]) {
+                let l = array[j];
+                array[j] = array[j + 1];
+                array[j + 1] = l;
             }
         }
     }
-    return chosenArray;
+    return array;
 };
-const sortMinMax = (array) => {
+const sortMinMax = (chosenArray) => {
+    let array = chosenArray;
     for (let i = 0; i < array.length; i++) {
         for (let j = i; j < array.length; j++) {
             if (array[j] < array[i]) {

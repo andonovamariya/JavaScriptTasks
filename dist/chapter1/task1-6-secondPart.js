@@ -2,7 +2,8 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 const SENTENCE = "What we do in life echoes to eternity";
 const FORMAT = /[^a-zA-Z0-9 ]/g;
-const findTheLongestWord = (string, letter) => {
+const findTheLongestWord = (chosenString, letter) => {
+    let string = chosenString;
     const stringWords = string.replace(FORMAT, "").split(" ");
     const isThereWordStartingWithPassedLetter = stringWords.some((word) => word.startsWith(letter));
     if (isThereWordStartingWithPassedLetter) {
@@ -14,6 +15,6 @@ const findTheLongestWord = (string, letter) => {
         }, 0);
         return stringWords[index];
     }
-    return "There is no word starting with this letter.";
+    return "There is no word starting with this letter in the sentence.";
 };
 console.log(findTheLongestWord(SENTENCE, "e"));

@@ -1,5 +1,5 @@
 import { expect, it } from "vitest";
-import { flatten } from "../dist/chapter2/task2-5";
+import { flatten } from "../../dist/chapter2/task2-5";
 
 it("should return the same array with every object in it flattened", () => {
   const array = [

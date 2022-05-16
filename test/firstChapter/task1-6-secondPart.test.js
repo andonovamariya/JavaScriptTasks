@@ -1,5 +1,5 @@
 import { it, expect } from "vitest";
-import { findTheLongestWord } from "../dist/chapter1/task1-6-secondPart";
+import { findTheLongestWord } from "../../dist/chapter1/task1-6-secondPart";
 
 it("should return the longest word which starts with a certain letter", () => {
   const string = "What we do in life echoes !!!!!!!!! to eternity";

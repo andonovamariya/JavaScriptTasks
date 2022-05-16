@@ -3,7 +3,7 @@ import {
   findLongestWord,
   sortLongestWord,
   findLongestWordWithReduce,
-} from "../dist/chapter1/task1-6-firstPart";
+} from "../../dist/chapter1/task1-6-firstPart";
 
 it("should ignore characters which are not letters", () => {
   const string = "What we do in life echoes !!!!!!!!! to eternity";

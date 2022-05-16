@@ -1,5 +1,5 @@
 import { it, expect } from "vitest";
-import { bubbleSort } from "../dist/chapter1/task1-2";
+import { bubbleSort } from "../../dist/chapter1/task1-2";
 
 it("should return a sorted array", () => {
   const array = [3, 1, 2];

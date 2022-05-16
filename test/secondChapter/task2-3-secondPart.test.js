@@ -1,5 +1,5 @@
 import { expect, it } from "vitest";
-import { appendingValuesAdvanced } from "../dist/chapter2/task2-3-secondPart";
+import { appendingValuesAdvanced } from "../../dist/chapter2/task2-3-secondPart";
 
 it("should return ", () => {
   const array1 = [

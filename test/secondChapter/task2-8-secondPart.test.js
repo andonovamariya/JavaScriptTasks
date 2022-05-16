@@ -1,5 +1,5 @@
 import { expect, it } from "vitest";
-import { higherWeightThan } from "../dist/chapter2/task2-8-secondPart";
+import { higherWeightThan } from "../../dist/chapter2/task2-8-secondPart";
 
 it("should return true or false if all elements in the array have a higher weight than passed argument", () => {
   const calculatedWeight = 12;

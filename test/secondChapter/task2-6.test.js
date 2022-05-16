@@ -1,5 +1,5 @@
 import { expect, it } from "vitest";
-import { removeInnerPercentage } from "../dist/chapter2/task2-6";
+import { removeInnerPercentage } from "../../dist/chapter2/task2-6";
 
 it("should remove the inner percentage of the elements from an array", () => {
   const array = [1, 2, 3, 4];

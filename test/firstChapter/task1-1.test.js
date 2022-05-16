@@ -1,5 +1,5 @@
 import { it, expect } from "vitest";
-import { oddElements } from "../dist/chapter1/task1-1";
+import { oddElements } from "../../dist/chapter1/task1-1";
 
 it("should return 0 if an empty array is passed", () => {
   // Arrange

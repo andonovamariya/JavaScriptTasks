@@ -2,7 +2,7 @@ import { expect, it } from "vitest";
 import {
   getValuesWeight,
   checkForEquality,
-} from "../dist/chapter2/task2-8-firstPart";
+} from "../../dist/chapter2/task2-8-firstPart";
 
 it("should calculate the weight of the elements in a given array", () => {
   const array = [

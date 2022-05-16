@@ -1,5 +1,5 @@
 import { it, expect } from "vitest";
-import { transormDateObjectAdvanced } from "../dist/chapter1/task1-9-secondPart";
+import { transormDateObjectAdvanced } from "../../dist/chapter1/task1-9-secondPart";
 
 it("should return a formatted string representation of a date object with expanded features", () => {
   const date = new Date();

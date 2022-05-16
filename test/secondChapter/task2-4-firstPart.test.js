@@ -1,5 +1,5 @@
 import { expect, it } from "vitest";
-import { calculateNumbersHigherThan } from "../dist/chapter2/task2-4-firstPart";
+import { calculateNumbersHigherThan } from "../../dist/chapter2/task2-4-firstPart";
 
 it("should return the sum of the elements in the array that have value higher than the number passed as argument", () => {
   const array = [1, 2, 3];

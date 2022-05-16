@@ -1,5 +1,5 @@
 import { expect, it } from "vitest";
-import { checkIfObjectIsIncluded } from "../dist/chapter2/task2-2-firstPart";
+import { checkIfObjectIsIncluded } from "../../dist/chapter2/task2-2-firstPart";
 
 it("should return true or false if the passed object is added in the array or not", () => {
   const object = { name: "Mariya", age: 21 };

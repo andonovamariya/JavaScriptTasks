@@ -1,5 +1,5 @@
 import { expect, it } from "vitest";
-import { findLongestSequenceOfRandomizedArray, randomizeArray } from "../dist/chapter2/task2-7";
+import { findLongestSequenceOfRandomizedArray, randomizeArray } from "../../dist/chapter2/task2-7";
 
 it("should return the longest sequence of ascending numbers in an array", () => {
   const array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];

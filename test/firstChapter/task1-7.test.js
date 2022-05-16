@@ -1,5 +1,5 @@
 import { it, expect } from "vitest";
-import { convertDateToISO8601 } from "../dist/chapter1/task1-7";
+import { convertDateToISO8601 } from "../../dist/chapter1/task1-7";
 
 it("should return the string representation of a given date object in the ISO 8601 format", () => {
   const date = new Date();

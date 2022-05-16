@@ -1,5 +1,5 @@
 import { expect, it } from "vitest";
-import { checkIfObjectIsPresentDeep } from "../dist/chapter2/task2-2-secondPart";
+import { checkIfObjectIsPresentDeep } from "../../dist/chapter2/task2-2-secondPart";
 
 it("should perfom a deep searh of an object in an array", () => {
   const object = { name: "Mariya", age: 21 };

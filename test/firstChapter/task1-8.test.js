@@ -1,5 +1,5 @@
 import { it, expect } from "vitest";
-import { getDatesDifference } from "../dist/chapter1/task1-8";
+import { getDatesDifference } from "../../dist/chapter1/task1-8";
 
 it("should return the difference in time between the two passed arguments", () => {
   const date1 = new Date("2020/11/12 12:00:00");

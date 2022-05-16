@@ -1,5 +1,5 @@
 import { expect, it } from "vitest";
-import { sortBubble, sortMinMax } from "../dist/chapter2/task2-1";
+import { sortBubble, sortMinMax } from "../../dist/chapter2/task2-1";
 
 it("should return a sorted array", () => {
   const array = [3, 1, 2];

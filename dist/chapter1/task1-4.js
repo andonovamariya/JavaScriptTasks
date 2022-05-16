@@ -1,5 +1,3 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
 const selectedArray = [
     6,
     "Test",
@@ -12,7 +10,7 @@ const selectedArray = [
     },
     { count: 5 },
 ];
-const replaceArrayKeys = (chosenArray) => {
+export const replaceArrayKeys = (chosenArray) => {
     let typesObject = {}, array = chosenArray, nullCount = 0, objectsCount = 0, stringsCount = 0, numericsCount = 0, arraysCount = 0, undefinedCount = 0, datesCount = 0, booleansCount = 0, functionsCount = 0;
     for (let i = 0; i <= array.length; i++) {
         if (array[i] === null) {

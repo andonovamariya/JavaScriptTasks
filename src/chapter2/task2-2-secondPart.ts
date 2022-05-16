@@ -18,7 +18,7 @@ interface Person {
   name: string;
 }
 
-const checkIfObjectIsPresentDeep = (array: any[], object: Person): boolean => {
+export const checkIfObjectIsPresentDeep = (array: any[], object: Person): boolean => {
   if (!array || !object || array.length === 0) {
     return false;
   }
@@ -39,4 +39,3 @@ const checkIfObjectIsPresentDeep = (array: any[], object: Person): boolean => {
 
 console.log(checkIfObjectIsPresentDeep(array, person));
 
-export {};

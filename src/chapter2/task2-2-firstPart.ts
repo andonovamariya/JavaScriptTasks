@@ -18,18 +18,17 @@ interface Person {
   name: string;
 }
 
-const checkIfObjectIsIncluded = (
+export const checkIfObjectIsIncluded = (
   chosenArray: any[],
   person: Person
-): string => {
+): boolean => {
   let array: any[] = chosenArray,
     object: Person = person;
   if (array.includes(object)) {
-    return "The object is included in the array.";
+    return true;
   } else {
-    return "The object is not included in the array.";
+    return false;
   }
 };
 console.log(checkIfObjectIsIncluded(array, person));
 
-export {};

@@ -1,5 +1,3 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
 const object = {
     cards: 6,
     label: "Test",
@@ -13,7 +11,7 @@ const object = {
     },
     experience: { count: 5 },
 };
-const getObjectWeight = (chosenObject) => {
+export const getObjectWeight = (chosenObject) => {
     let weight = 0, object = chosenObject;
     Object.entries(object).forEach(([key, value]) => {
         if (value === null) {

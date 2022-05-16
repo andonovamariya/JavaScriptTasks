@@ -1,6 +1,6 @@
 const CHOSEN_DATE: Date = new Date();
 
-const convertDateToISO8601 = (chosenDate: Date): string => {
+export const convertDateToISO8601 = (chosenDate: Date): string => {
   const date: Date = chosenDate;
   const pad = (n: number): string => {
     let digit: number = n;
@@ -26,4 +26,3 @@ const convertDateToISO8601 = (chosenDate: Date): string => {
 
 console.log(convertDateToISO8601(CHOSEN_DATE));
 
-export {};

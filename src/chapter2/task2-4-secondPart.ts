@@ -1,7 +1,7 @@
 const array: number[] = [1, 2, 3, 4, 5, 6, 7];
 const DIVISIBLE_NUMBER: number = 2;
 
-const calculateNumbersDivisible = (
+export const calculateNumbersDivisible = (
   chosenArray: number[],
   chosenDivisibleNumber: number
 ): number[] => {
@@ -21,4 +21,4 @@ console.log(
   calculateNumbersDivisible(array, DIVISIBLE_NUMBER)
 );
 
-export {};
+

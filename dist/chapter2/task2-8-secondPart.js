@@ -1,5 +1,3 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
 const array = [
     6,
     "Test",
@@ -10,7 +8,7 @@ const array = [
     { name: "john.doe", role: "admin" },
 ];
 const INPUT_WEIGHT = 12;
-const getArrayWeight = (chosenArray) => {
+export const getArrayWeight = (chosenArray) => {
     let weight = 0, array = chosenArray;
     Object.entries(array).forEach(([key, value]) => {
         if (typeof value !== "undefined" && value === null) {
@@ -44,11 +42,12 @@ const getArrayWeight = (chosenArray) => {
     });
     return weight;
 };
-const higherWeightThan = (inputWeight, weight) => {
+export const higherWeightThan = (inputWeight, weight) => {
     if (inputWeight > weight) {
-        return `The answer is ${true}, the inputted weight is ${inputWeight}, the weight of the elements in the array is ${weight}.`;
+        return true;
     }
-    else
-        return `The answer is ${false}, the inputted weight is ${inputWeight}, the weight of the elements in the array is ${weight}.`;
+    else {
+        return false;
+    }
 };
 console.log(higherWeightThan(INPUT_WEIGHT, getArrayWeight(array)));

@@ -24,6 +24,6 @@ const fifthPattern = (maxNumber: number): string => {
   return row;
 };
 
-console.log("Fifth pattern:\n", fifthPattern(MAX_NUMBER));
+console.log("Fifth pattern: \n", fifthPattern(MAX_NUMBER));
 
 export {};

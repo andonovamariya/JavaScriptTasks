@@ -24,7 +24,7 @@ interface AnObject {
   experience: { count: number };
 }
 
-const getObjectWeight = (chosenObject: AnObject): number => {
+export const getObjectWeight = (chosenObject: AnObject): number => {
   let weight: number = 0,
     object: AnObject = chosenObject;
 
@@ -59,4 +59,4 @@ const getObjectWeight = (chosenObject: AnObject): number => {
 
 console.log("The object weight is: ", getObjectWeight(object));
 
-export {};
+

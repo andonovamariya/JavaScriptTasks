@@ -1,8 +1,6 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
 const SENTENCE = "What we do in life echoes !!!!!!!!! to eternity";
 const FORMAT = /[^a-zA-Z0-9 ]/g;
-const findLongestWord = (stringFormat) => {
+export const findLongestWord = (stringFormat) => {
     let longestWord = "", string = stringFormat, wordSplit = string.replace(FORMAT, "").split(" ");
     for (let i = 0; i < wordSplit.length; i++) {
         if (wordSplit[i].length > longestWord.length) {
@@ -12,7 +10,7 @@ const findLongestWord = (stringFormat) => {
     return longestWord;
 };
 console.log(findLongestWord(SENTENCE));
-const sortLongestWord = (chosenString) => {
+export const sortLongestWord = (chosenString) => {
     let string = chosenString;
     let longestWord = string
         .replace(FORMAT, "")
@@ -23,7 +21,7 @@ const sortLongestWord = (chosenString) => {
     return longestWord[0];
 };
 console.log(sortLongestWord(SENTENCE));
-const findLongestWordWithReduce = (chosenString) => {
+export const findLongestWordWithReduce = (chosenString) => {
     let string = chosenString;
     let wordSplit = string.replace(FORMAT, "").split(" ");
     let longestWord = wordSplit.reduce(function (longestWord, currentWord) {

@@ -1,5 +1,3 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
 const person = { name: "John Doe" };
 const array = [
     6,
@@ -15,7 +13,7 @@ const array = [
     { count: 5 },
     { name: "John Doe" },
 ];
-const checkIfObjectIsPresentDeep = (array, object) => {
+export const checkIfObjectIsPresentDeep = (array, object) => {
     if (!array || !object || array.length === 0) {
         return false;
     }

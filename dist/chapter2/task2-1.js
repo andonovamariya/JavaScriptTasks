@@ -1,7 +1,5 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
 const array = [6, 4, 3, 1, 9, 44, 33, 2];
-const sortBubble = (chosenArray) => {
+export const sortBubble = (chosenArray) => {
     let array = chosenArray;
     for (let i = 0; i < array.length; i++) {
         for (let j = 0; j < array.length; j++) {
@@ -14,7 +12,7 @@ const sortBubble = (chosenArray) => {
     }
     return array;
 };
-const sortMinMax = (chosenArray) => {
+export const sortMinMax = (chosenArray) => {
     let array = chosenArray;
     for (let i = 0; i < array.length; i++) {
         for (let j = i; j < array.length; j++) {

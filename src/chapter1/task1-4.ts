@@ -15,7 +15,7 @@ interface RegularObject {
   [key: string]: number;
 }
 
-const replaceArrayKeys = (chosenArray: any[]): RegularObject => {
+export const replaceArrayKeys = (chosenArray: any[]): RegularObject => {
   let typesObject: RegularObject = {},
     array: any[] = chosenArray,
     nullCount = 0,
@@ -67,4 +67,3 @@ const replaceArrayKeys = (chosenArray: any[]): RegularObject => {
 
 console.log(replaceArrayKeys(selectedArray));
 
-export {};

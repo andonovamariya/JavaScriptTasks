@@ -1,5 +1,3 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
 const array = [
     6,
     "Test",
@@ -13,7 +11,7 @@ const array = [
     },
 ];
 const INPUT_WEIGHT = 16;
-const getValuesWeight = (chosenArray) => {
+export const getValuesWeight = (chosenArray) => {
     let countersArray = [], array = chosenArray, nullWeight = 0, objectWeight = 0, stringWeight = 0, numberWeight = 0, undefinedWeight = 0, booleanWeight = 0, dateWeight = 0;
     for (let i = 0; i <= array.length; i++) {
         if (typeof array[i] !== "undefined" && array[i] === null) {
@@ -46,7 +44,7 @@ const getValuesWeight = (chosenArray) => {
     countersArray.push(nullWeight, objectWeight, stringWeight, numberWeight, undefinedWeight, booleanWeight, dateWeight);
     return countersArray;
 };
-const checkForEquality = (countersArray, inputWeight) => {
+export const checkForEquality = (countersArray, inputWeight) => {
     let answer = false;
     for (let i = 0; i < countersArray.length; i++) {
         if (countersArray[i] === inputWeight) {
@@ -54,10 +52,10 @@ const checkForEquality = (countersArray, inputWeight) => {
         }
     }
     if (answer) {
-        console.log("There is a value in the array which is equal to the inputted one.");
+        return true;
     }
     else {
-        console.log("There is NOT a value in the array which is equal to the inputted one.");
+        return false;
     }
 };
 const OBJECT_WEIGHT = getValuesWeight(array);

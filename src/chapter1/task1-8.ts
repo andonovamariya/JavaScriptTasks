@@ -1,7 +1,10 @@
 const DATE1: Date = new Date("2020/11/12 12:00:00");
 const DATE2: Date = new Date("2022/12/31 13:40:59");
 
-const getDatesDifference = (firstDate: Date, secondDate: Date): string => {
+export const getDatesDifference = (
+  firstDate: Date,
+  secondDate: Date
+): string => {
   const dateDifference: Date = new Date(Math.abs(+firstDate - +secondDate));
 
   const years: number = dateDifference.getUTCFullYear() - 1970;
@@ -31,5 +34,3 @@ const getDatesDifference = (firstDate: Date, secondDate: Date): string => {
 };
 
 console.log(getDatesDifference(DATE1, DATE2));
-
-export {};

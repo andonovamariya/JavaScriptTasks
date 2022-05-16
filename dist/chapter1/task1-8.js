@@ -1,8 +1,6 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
 const DATE1 = new Date("2020/11/12 12:00:00");
 const DATE2 = new Date("2022/12/31 13:40:59");
-const getDatesDifference = (firstDate, secondDate) => {
+export const getDatesDifference = (firstDate, secondDate) => {
     const dateDifference = new Date(Math.abs(+firstDate - +secondDate));
     const years = dateDifference.getUTCFullYear() - 1970;
     const months = dateDifference.getUTCMonth();

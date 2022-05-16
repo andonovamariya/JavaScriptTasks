@@ -1,6 +1,6 @@
 const array: number[] = [6, 4, 3, 1, 8, 44, 33, 2];
 
-const bubbleSort = (chosenArray: number[]): number[] => {
+export const bubbleSort = (chosenArray: number[]): number[] => {
   let i: number,
     l: number,
     j: number,
@@ -20,4 +20,4 @@ const bubbleSort = (chosenArray: number[]): number[] => {
 
 console.log("Sorted array:", bubbleSort(array));
 
-export {};
+

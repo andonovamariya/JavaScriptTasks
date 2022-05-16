@@ -1,5 +1,3 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
 const person = { name: "John Doe" };
 const array = [
     6,
@@ -15,13 +13,13 @@ const array = [
     { count: 5 },
     { name: "John Doe" },
 ];
-const checkIfObjectIsIncluded = (chosenArray, person) => {
+export const checkIfObjectIsIncluded = (chosenArray, person) => {
     let array = chosenArray, object = person;
     if (array.includes(object)) {
-        return "The object is included in the array.";
+        return true;
     }
     else {
-        return "The object is not included in the array.";
+        return false;
     }
 };
 console.log(checkIfObjectIsIncluded(array, person));

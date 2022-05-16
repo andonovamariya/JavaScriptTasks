@@ -1,5 +1,3 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
 const array = [
     {
         person: {
@@ -17,7 +15,7 @@ const array = [
     "sunny day",
     5,
 ];
-const flatten = (chosenArray) => {
+export const flatten = (chosenArray) => {
     let result = {};
     let array = chosenArray;
     for (const i in array) {

@@ -1,7 +1,5 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
 const array = [6, 4, 3, 1, 8, 44, 33, 2];
-const bubbleSort = (chosenArray) => {
+export const bubbleSort = (chosenArray) => {
     let i, l, j, array = chosenArray;
     for (i = 0; i < array.length; i++) {
         for (j = 0; j < array.length; j++) {

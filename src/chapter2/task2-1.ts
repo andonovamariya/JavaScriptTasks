@@ -1,6 +1,6 @@
 const array: number[] = [6, 4, 3, 1, 9, 44, 33, 2];
 
-const sortBubble = (chosenArray: number[]): number[] => {
+export const sortBubble = (chosenArray: number[]): number[] => {
   let array: number[] = chosenArray;
   for (let i = 0; i < array.length; i++) {
     for (let j = 0; j < array.length; j++) {
@@ -14,7 +14,7 @@ const sortBubble = (chosenArray: number[]): number[] => {
   return array;
 };
 
-const sortMinMax = (chosenArray: number[]): number[] => {
+export const sortMinMax = (chosenArray: number[]): number[] => {
   let array: number[] = chosenArray;
   for (let i = 0; i < array.length; i++) {
     for (let j = i; j < array.length; j++) {
@@ -36,4 +36,3 @@ const chooseSortingMethod = (
 
 console.log(chooseSortingMethod(array, sortBubble));
 
-export {};

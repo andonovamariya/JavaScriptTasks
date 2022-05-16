@@ -40,3 +40,4 @@ Date.prototype.getDatesDifference = function getDatesDifference(
 };
 
 const timeLapse: string = DATE1.getDatesDifference(DATE2);
+

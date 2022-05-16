@@ -1,7 +1,7 @@
 const SENTENCE: string = "What we do in life echoes !!!!!!!!! to eternity";
 const FORMAT: RegExp = /[^a-zA-Z0-9 ]/g;
 
-const findLongestWord = (stringFormat: string): string => {
+export const findLongestWord = (stringFormat: string): string => {
   let longestWord: string = "",
     string: string = stringFormat,
     wordSplit: string[] = string.replace(FORMAT, "").split(" ");
@@ -16,7 +16,7 @@ const findLongestWord = (stringFormat: string): string => {
 };
 console.log(findLongestWord(SENTENCE));
 
-const sortLongestWord = (chosenString: string): string => {
+export const sortLongestWord = (chosenString: string): string => {
   let string: string = chosenString;
   let longestWord: string[] = string
     .replace(FORMAT, "")
@@ -28,7 +28,7 @@ const sortLongestWord = (chosenString: string): string => {
 };
 console.log(sortLongestWord(SENTENCE));
 
-const findLongestWordWithReduce = (chosenString: string): string => {
+export const findLongestWordWithReduce = (chosenString: string): string => {
   let string: string = chosenString;
   let wordSplit: string[] = string.replace(FORMAT, "").split(" ");
 
@@ -45,4 +45,3 @@ const findLongestWordWithReduce = (chosenString: string): string => {
 };
 console.log(findLongestWordWithReduce(SENTENCE));
 
-export {};

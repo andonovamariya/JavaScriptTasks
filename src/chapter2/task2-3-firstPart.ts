@@ -16,11 +16,14 @@ const secondArray: any[] = [
   6,
 ];
 
-const firstFoundArrayElement: any[] = firstArray.find((element: any) => {
-  return Array.isArray(element);
-});
+export const appendTruthyValues = (
+  firstArray: any[],
+  secondArray: any[]
+): any[] => {
+  const firstFoundArrayElement: any[] = firstArray.find((element: any) => {
+    return Array.isArray(element);
+  });
 
-function appender(firstFoundArrayElement: any[], secondArray: any[]): any[] {
   for (let i = 0; i < secondArray.length; i++) {
     if (secondArray[i]) {
       firstFoundArrayElement.push(secondArray[i]);
@@ -28,8 +31,6 @@ function appender(firstFoundArrayElement: any[], secondArray: any[]): any[] {
   }
 
   return firstArray;
-}
+};
 
-console.log(appender(firstFoundArrayElement, secondArray));
-
-export {};
+console.log(appendTruthyValues(firstArray, secondArray));

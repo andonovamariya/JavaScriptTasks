@@ -1,5 +1,3 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
 const array = [
     6,
     "Test",
@@ -13,7 +11,7 @@ const array = [
     },
 ];
 const INPUT_WEIGHT = 12;
-const getValuesWeight = (chosenArray) => {
+export const getValuesWeight = (chosenArray) => {
     let array = chosenArray, countersArray = [], numberCount = 0, nullCount = 0, objectCount = 0, functionCount = 0, undefinedCount = 0, booleanCount = 0, stringCount = 0, dateCount = 0;
     array.forEach((value) => {
         switch (typeof value) {
@@ -50,13 +48,14 @@ const getValuesWeight = (chosenArray) => {
     countersArray.push(numberCount, nullCount, objectCount, dateCount, functionCount, undefinedCount, booleanCount, stringCount);
     return countersArray;
 };
-const checkForEquality = (countersArray, weight) => {
+export const checkForEquality = (countersArray, weight) => {
+    let answer = false;
     for (let i = 0; i < countersArray.length; i++) {
         if (countersArray[i] === weight) {
-            return true;
+            answer = true;
         }
     }
-    return false;
+    return answer;
 };
 const OBJECT_WEIGHT = getValuesWeight(array);
 console.log(getValuesWeight(array));

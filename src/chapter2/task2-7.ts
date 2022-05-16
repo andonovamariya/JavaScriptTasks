@@ -1,13 +1,16 @@
 const array: number[] = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
-const randomizeArray = (chosenArray: number[]): number[] => {
-  let array: number[] = chosenArray;
-  let randomizedArray: number[] = array.sort((a, b) => 0.5 - Math.random());
+export const randomizeArray = (chosenArray: number[]): number[] => {
+  let randomizedArray: number[] = chosenArray.sort(
+    (a, b) => 0.5 - Math.random()
+  );
   return randomizedArray;
 };
 
-const findLongestSequence = (randomizedArray: number[]): number[] => {
-  let array: number[] = randomizedArray,
+export const findLongestSequenceOfRandomizedArray = (
+  chosenArray: number[]
+): number[] => {
+  let array: number[] = chosenArray,
     result = [],
     temporaryArray: number[] = [],
     longestSequence: number[] = [];
@@ -32,10 +35,11 @@ const findLongestSequence = (randomizedArray: number[]): number[] => {
   return longestSequence;
 };
 
-console.log("The randomized array: ", randomizeArray(array));
+const randomizedArray = randomizeArray(array);
+
+
+console.log(randomizedArray);
 console.log(
   "The longest sequence of ascending numeric order: ",
-  findLongestSequence(array)
+  findLongestSequenceOfRandomizedArray(randomizedArray)
 );
-
-export {};

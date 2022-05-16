@@ -1,5 +1,3 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
 const MAX_NUMBER = 7;
 const diamondPattern = (maxNumber) => {
     let i, j, max = maxNumber, row = "";
@@ -24,3 +22,4 @@ const diamondPattern = (maxNumber) => {
     return row;
 };
 console.log("Diamond pattern:\n", diamondPattern(MAX_NUMBER));
+export {};

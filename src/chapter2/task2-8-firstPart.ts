@@ -12,7 +12,7 @@ const array: any[] = [
 ];
 const INPUT_WEIGHT: number = 16;
 
-const getValuesWeight = (chosenArray: any[]): number[] => {
+export const getValuesWeight = (chosenArray: any[]): number[] => {
   let countersArray: number[] = [],
     array: any[] = chosenArray,
     nullWeight: number = 0,
@@ -58,7 +58,7 @@ const getValuesWeight = (chosenArray: any[]): number[] => {
   return countersArray;
 };
 
-const checkForEquality = (countersArray: number[], inputWeight: number): void => {
+export const checkForEquality = (countersArray: number[], inputWeight: number): boolean => {
   let answer: boolean = false;
   for (let i = 0; i < countersArray.length; i++) {
     if (countersArray[i] === inputWeight) {
@@ -66,17 +66,13 @@ const checkForEquality = (countersArray: number[], inputWeight: number): void =>
     }
   }
   if (answer) {
-    console.log(
-      "There is a value in the array which is equal to the inputted one."
-    );
+    return true;
   } else {
-    console.log(
-      "There is NOT a value in the array which is equal to the inputted one."
-    );
+    return false;
   }
 };
 const OBJECT_WEIGHT = getValuesWeight(array);
 console.log(OBJECT_WEIGHT);
 console.log(checkForEquality(OBJECT_WEIGHT, INPUT_WEIGHT));
 
-export {};
+

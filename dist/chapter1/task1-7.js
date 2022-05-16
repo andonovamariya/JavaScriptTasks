@@ -1,7 +1,5 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
 const CHOSEN_DATE = new Date();
-const convertDateToISO8601 = (chosenDate) => {
+export const convertDateToISO8601 = (chosenDate) => {
     const date = chosenDate;
     const pad = (n) => {
         let digit = n;

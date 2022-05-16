@@ -3,7 +3,7 @@ const array: number[] = [
 ];
 const PERCENT: number = 80;
 
-const removeInner = (
+export const removeInnerPercentage = (
   chosenArray: number[],
   chosenPercent: number
 ): number[] => {
@@ -18,6 +18,5 @@ const removeInner = (
   return result;
 };
 
-console.log(removeInner(array, PERCENT));
+console.log(removeInnerPercentage(array, PERCENT));
 
-export {};

@@ -1,5 +1,3 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
 const MAX_NUMBER = 5;
 const createSpace = (n) => {
     let digit = n, formattedNumber = digit.toString();
@@ -51,3 +49,4 @@ const seventhPattern = (maxNumber) => {
     return row;
 };
 console.log("Seventh pattern: ", seventhPattern(MAX_NUMBER));
+export {};

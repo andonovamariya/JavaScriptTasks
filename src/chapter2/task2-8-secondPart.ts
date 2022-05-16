@@ -9,7 +9,7 @@ const array: any[] = [
 ];
 const INPUT_WEIGHT: number = 12;
 
-const getArrayWeight = (chosenArray: any[]): number => {
+export const getArrayWeight = (chosenArray: any[]): number => {
   let weight: number = 0,
     array: any[] = chosenArray;
   Object.entries(array).forEach(([key, value]) => {
@@ -39,13 +39,15 @@ const getArrayWeight = (chosenArray: any[]): number => {
   return weight;
 };
 
-const higherWeightThan = (inputWeight: number, weight: number): string => {
+export const higherWeightThan = (
+  inputWeight: number,
+  weight: number
+): boolean => {
   if (inputWeight > weight) {
-    return `The answer is ${true}, the inputted weight is ${inputWeight}, the weight of the elements in the array is ${weight}.`;
-  } else
-    return `The answer is ${false}, the inputted weight is ${inputWeight}, the weight of the elements in the array is ${weight}.`;
+    return true;
+  } else {
+    return false;
+  }
 };
 
 console.log(higherWeightThan(INPUT_WEIGHT, getArrayWeight(array)));
-
-export {};

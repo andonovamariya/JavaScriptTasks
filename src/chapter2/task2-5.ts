@@ -20,7 +20,7 @@ interface RegularObject {
   [key: string]: any[];
 }
 
-const flatten = (chosenArray: any[]): RegularObject => {
+export const flatten = (chosenArray: any[]): RegularObject => {
   let result: RegularObject = {};
   let array: any[] = chosenArray;
   for (const i in array) {
@@ -37,4 +37,3 @@ const flatten = (chosenArray: any[]): RegularObject => {
 };
 console.log(flatten(array));
 
-export {};

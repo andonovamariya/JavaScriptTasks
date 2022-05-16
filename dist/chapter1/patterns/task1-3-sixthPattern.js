@@ -1,5 +1,3 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
 const MAX_NUMBER = 36;
 const sixthPattern = (maxNumber) => {
     let k = 11, l = 28, i, j, row = "", max = maxNumber;
@@ -25,3 +23,4 @@ const sixthPattern = (maxNumber) => {
     return row;
 };
 console.log("Sixth pattern:\n", sixthPattern(MAX_NUMBER));
+export {};

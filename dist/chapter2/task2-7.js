@@ -1,13 +1,10 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
 const array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
-const randomizeArray = (chosenArray) => {
-    let array = chosenArray;
-    let randomizedArray = array.sort((a, b) => 0.5 - Math.random());
+export const randomizeArray = (chosenArray) => {
+    let randomizedArray = chosenArray.sort((a, b) => 0.5 - Math.random());
     return randomizedArray;
 };
-const findLongestSequence = (randomizedArray) => {
-    let array = randomizedArray, result = [], temporaryArray = [], longestSequence = [];
+export const findLongestSequenceOfRandomizedArray = (chosenArray) => {
+    let array = chosenArray, result = [], temporaryArray = [], longestSequence = [];
     for (let i = 0; i < array.length; i++) {
         if (array[i] < array[i + 1]) {
             temporaryArray.push(array[i]);
@@ -30,5 +27,6 @@ const findLongestSequence = (randomizedArray) => {
     }
     return longestSequence;
 };
-console.log("The randomized array: ", randomizeArray(array));
-console.log("The longest sequence of ascending numeric order: ", findLongestSequence(array));
+const randomizedArray = randomizeArray(array);
+console.log(randomizedArray);
+console.log("The longest sequence of ascending numeric order: ", findLongestSequenceOfRandomizedArray(randomizedArray));

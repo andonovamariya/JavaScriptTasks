@@ -1,7 +1,6 @@
-"use strict";
 const array = [1, 2, 3, 4, 5, 6, 7];
 const HIGHER_THAN = 4;
-const calculateNumbersHigherThan = (chosenArray, higherThanChosen) => {
+export const calculateNumbersHigherThan = (chosenArray, higherThanChosen) => {
     let sum = 0, array = chosenArray, higherThan = higherThanChosen;
     for (let i = 0; i < array.length; i++) {
         if (higherThan < array[i]) {

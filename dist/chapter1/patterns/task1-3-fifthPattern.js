@@ -1,5 +1,3 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
 const MAX_NUMBER = 16;
 const fifthPattern = (maxNumber) => {
     let max = maxNumber, i, j, k, row = "";
@@ -16,4 +14,5 @@ const fifthPattern = (maxNumber) => {
     }
     return row;
 };
-console.log("Fifth pattern:\n", fifthPattern(MAX_NUMBER));
+console.log("Fifth pattern: \n", fifthPattern(MAX_NUMBER));
+export {};

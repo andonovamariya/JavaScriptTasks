@@ -10,8 +10,9 @@ const selectedArray = [
     },
     { count: 5 },
 ];
-export const replaceArrayKeys = (chosenArray) => {
-    let typesObject = {}, array = chosenArray, nullCount = 0, objectsCount = 0, stringsCount = 0, numericsCount = 0, arraysCount = 0, undefinedCount = 0, datesCount = 0, booleansCount = 0, functionsCount = 0;
+export const countTypes = (chosenArray) => {
+    let array = chosenArray, nullCount = 0, objectsCount = 0, stringsCount = 0, numericsCount = 0, arraysCount = 0, undefinedCount = 0, datesCount = 0, booleansCount = 0, functionsCount = 0;
+    let typesObject = {};
     for (let i = 0; i <= array.length; i++) {
         if (array[i] === null) {
             nullCount++;
@@ -55,4 +56,4 @@ export const replaceArrayKeys = (chosenArray) => {
     typesObject["functionsCount"] = functionsCount;
     return typesObject;
 };
-console.log(replaceArrayKeys(selectedArray));
+console.log(countTypes(selectedArray));

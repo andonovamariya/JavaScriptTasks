@@ -1,6 +1,6 @@
 const DATE = new Date();
 const STRING = "YYYY-MM-DD HH:mm:ss Is my proof of concept a A!";
-export function transormDateObject(date, string) {
+export const transormDateObject = (date, string) => {
     const pad = (digit) => digit.toString().padStart(2, "0");
     const dateTokens = {
         YYYY: (date) => date.getFullYear(),
@@ -20,5 +20,5 @@ export function transormDateObject(date, string) {
     return Object.entries(dateTokens).reduce((result, [token, func]) => {
         return result.replace(token, func(date).toString());
     }, string);
-}
+};
 console.log(transormDateObject(DATE, STRING));

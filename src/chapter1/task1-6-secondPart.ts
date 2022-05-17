@@ -1,11 +1,9 @@
 const SENTENCE: string = "What we do in life echoes to eternity";
 const FORMAT: RegExp = /[^a-zA-Z0-9 ]/g;
 
-export const findTheLongestWord = (
-  chosenString: string,
-  letter: string
-): string => {
+export const findTheLongestWord = (chosenString: string, letter: string): string => {
   let string: string = chosenString;
+  
   const stringWords: string[] = string.replace(FORMAT, "").split(" ");
 
   const isThereWordStartingWithPassedLetter: boolean = stringWords.some(

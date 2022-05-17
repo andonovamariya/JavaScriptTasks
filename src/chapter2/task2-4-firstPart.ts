@@ -1,6 +1,7 @@
 const array: number[] = [1, 2, 3, 4, 5, 6, 7];
 const HIGHER_THAN: number = 4;
 
+
 export const calculateNumbersHigherThan = (
   chosenArray: number[],
   higherThanChosen: number

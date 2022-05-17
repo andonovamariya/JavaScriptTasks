@@ -13,6 +13,3 @@ export const oddElements = (chosenArray: number[]): number => {
 };
 
 console.log("The count of odd elements in the array: ", oddElements(array));
-
-
-

@@ -1,16 +1,27 @@
-import { expect, it } from "vitest";
+import { describe, expect, it } from "vitest";
 import { higherWeightThan } from "../../dist/chapter2/task2-8-secondPart";
 
-it("should return true or false if all elements in the array have a higher weight than passed argument", () => {
-  const calculatedWeight = 12;
-  const inputtedWeight = 12;
-  const result = higherWeightThan(calculatedWeight, inputtedWeight);
-  const expectedFn = (calculatedWeight, inputtedWeight) => {
-    if (calculatedWeight > inputtedWeight) {
-      return true;
-    } else {
-      return false;
-    }
-  };
-  expect(result).toBe(expectedFn(calculatedWeight, inputtedWeight));
+describe("higherWeightThan()", () => {
+  it("should return true if all elements in the array have a higher weight than passed argument", () => {
+    const calculatedWeight = 55;
+    const inputtedWeight = 12;
+    const result = higherWeightThan(calculatedWeight, inputtedWeight);
+    const expectedResult = true;
+    expect(result).toBe(expectedResult);
+  });
+
+  it("should return false if all elements in the array have a lower weight than passed argument", () => {
+    const calculatedWeight = 5;
+    const inputtedWeight = 12;
+    const result = higherWeightThan(calculatedWeight, inputtedWeight);
+    const expectedResult = false;
+    expect(result).toBe(expectedResult);
+  });
+
+  it("should return a value of type Boolean", () => {
+    const calculatedWeight = 5;
+    const inputtedWeight = 12;
+    const result = higherWeightThan(calculatedWeight, inputtedWeight);
+    expect(result).toBeTypeOf("boolean");
+  });
 });

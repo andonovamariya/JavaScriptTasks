@@ -20,4 +20,3 @@ export const bubbleSort = (chosenArray: number[]): number[] => {
 
 console.log("Sorted array:", bubbleSort(array));
 
-

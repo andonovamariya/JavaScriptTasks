@@ -1,34 +1,18 @@
-import { expect, it } from "vitest";
-import { findLongestSequenceOfRandomizedArray, randomizeArray } from "../../dist/chapter2/task2-7";
+import { describe, expect, it } from "vitest";
+import { findLongestSequenceOfRandomizedArray } from "../../dist/chapter2/task2-7";
 
-it("should return the longest sequence of ascending numbers in an array", () => {
-  const array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
-  const randomizedArray = randomizeArray(array);
-  const result = findLongestSequenceOfRandomizedArray(randomizedArray);
-  const expectedFn = (randomizedArray) => {
-    let array = randomizedArray,
-      result = [],
-      temporaryArray = [],
-      longestSequence = [];
-    for (let i = 0; i < array.length; i++) {
-      if (array[i] < array[i + 1]) {
-        temporaryArray.push(array[i]);
-      } else if (array[i] > array[i + 1]) {
-        temporaryArray.push(array[i]);
-        result.push(temporaryArray);
-        temporaryArray = [];
-      } else {
-        temporaryArray.push(array[i]);
-        result.push(temporaryArray);
-        temporaryArray = [];
-      }
-    }
-    for (let i = 0; i < result.length; i++) {
-      if (longestSequence.length < result[i].length) {
-        longestSequence = result[i];
-      }
-    }
-    return longestSequence;
-  };
-  expect(result).toEqual(expectedFn(randomizedArray));
+describe("findLongestSequenceOfRandomizedArray()", () => {
+  it("should return a value of type Array", () => {
+    const array = [2, 1];
+    const result = findLongestSequenceOfRandomizedArray(array);
+
+    expect(result).toBeInstanceOf(Array);
+  });
+
+  it("should return the longest sequence of numbers in ascending order", () => {
+    const array = [5, 2, 1, 2, 3];
+    const result = findLongestSequenceOfRandomizedArray(array);
+    const expectedResult = [1, 2, 3];
+    expect(result).toEqual(expectedResult);
+  });
 });

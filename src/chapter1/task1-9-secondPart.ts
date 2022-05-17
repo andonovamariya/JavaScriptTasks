@@ -1,8 +1,8 @@
-const DATE: Date = new Date();
+const DATE: Date = new Date("2022-05-16T14:50:28.384Z");
 const STRING: string =
   "week W ddd(E) YYYY-MMM-DD Do HH:mm:ss Q quarter Is my proof of concept!";
 
-export function transormDateObjectAdvanced(date: Date, sentence: string) {
+export const transformDateObjectAdvanced = (date: Date, sentence: string): string => {
   const pad = (num: number): string => num.toString().padStart(2, "0");
 
   const MONTH_NAME: string[] = [
@@ -74,16 +74,12 @@ export function transormDateObjectAdvanced(date: Date, sentence: string) {
     } else return day + "th";
   };
 
-  const getWeekOfYear = (): number => {
-    let januaryFirst: Date = new Date(DATE.getFullYear(), 0, 1);
-    let numberOfDays: number = Math.floor(
-      (parseFloat(DATE.toDateString()) -
-        parseFloat(januaryFirst.toDateString())) /
-        (24 * 60 * 60 * 1000)
-    );
-    let result: number = Math.ceil((DATE.getDay() + 1 + numberOfDays) / 7);
-    return result;
-  };
+  const getWeekOfYear = (date: Date): number => {
+    const januaryFirst = (date.getFullYear(), 0, 1);
+    const numberOfDays = Math.floor((+date - januaryFirst) / (24 * 60 * 60 * 1000));
+    const weekOfYear = Math.ceil((date.getDay() + 1 + numberOfDays) / 7);
+    return weekOfYear;
+};
 
   const object = {
     YYYY: (date: Date) => date.getFullYear(),
@@ -110,6 +106,6 @@ export function transormDateObjectAdvanced(date: Date, sentence: string) {
   return Object.entries(object).reduce((result, [pattern, functionPart]) => {
     return result.replace(pattern, functionPart(date).toString());
   }, sentence);
-}
+};
 
-console.log(transormDateObjectAdvanced(DATE, STRING));
+console.log(transformDateObjectAdvanced(DATE, STRING));

@@ -1,31 +1,28 @@
-import { expect, it } from "vitest";
+import { expect, it, describe } from "vitest";
 import { appendingValuesAdvanced } from "../../dist/chapter2/task2-3-secondPart";
 
-it("should return ", () => {
-  const array1 = [
-    [1, 2, 3, 4],
-    [5, 6],
-  ];
-  const array2 = [
-    null,
-    ["one", "five"],
-    [1000, 1001],
-  ];
-  const result = appendingValuesAdvanced(array1, array2);
-  const expectFn = (array1, array2) => {
-    const foundArrays = array2.filter((el) => Array.isArray(el));
-    const foundObjects = array2.filter(
-      (el) =>
-        typeof (el === "object") && el !== null && !(el instanceof Function)
-    );
-    for (let i = 0; i < array1.length; i++) {
-      if (i % 2 === 0) {
-        array1[i] = array1[i].concat(foundArrays);
-      } else if (i % 2 !== 0) {
-        array1[i] = array1[i].concat(foundObjects);
-      }
-    }
-    return array1;
-  };
-  expect(result).toBe(expectFn(array1, array2));
+describe("appendingValuesAdvanced()", () => {
+  it("should append to the first array: the values of the second array that are of Array type, when the index of the array child in the first array is even; the object elements from the second array, when the index is uneven ", () => {
+    const array1 = [
+      [1, 2, 3, 4],
+      [5, 6],
+    ];
+    const array2 = [null, ["one", "five"], [1000, 1001], { name: "Mariya" }];
+    const result = appendingValuesAdvanced(array1, array2);
+    const expectedResult = [
+      [1, 2, 3, 4, ["one", "five"], [1000, 1001]],
+      [5, 6, ["one", "five"], [1000, 1001], { name: "Mariya" }],
+    ];
+    expect(result).toEqual(expectedResult);
+  });
+
+  it("should return a value of type Array", () => {
+    const array1 = [
+      [1, 2, 3, 4],
+      [5, 6],
+    ];
+    const array2 = [null, ["one", "five"], [1000, 1001], { name: "Mariya" }];
+    const result = appendingValuesAdvanced(array1, array2);
+    expect(result).toBeInstanceOf(Array);
+  });
 });

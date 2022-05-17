@@ -1,87 +1,45 @@
-import { expect, it } from "vitest";
+import { describe, expect, it } from "vitest";
 import {
   getValuesWeight,
   checkForEquality,
 } from "../../dist/chapter2/task2-8-firstPart-anotherWay";
 
-it("should calculate the weight of the elements in a given array", () => {
-  const array = [
-    null,
-    { name: "Mariya" },
-    "Test",
-    6,
-    undefined,
-    false,
-    new Date(),
-  ];
-
-  const result = getValuesWeight(array);
-  const expectedFn = (array) => {
-    let countersArray = [],
-      numberCount = 0,
-      nullCount = 0,
-      objectCount = 0,
-      functionCount = 0,
-      undefinedCount = 0,
-      booleanCount = 0,
-      stringCount = 0,
-      dateCount = 0;
-    array.forEach((value) => {
-      switch (typeof value) {
-        case "number":
-          numberCount += 4;
-          break;
-        case "object":
-          if (value === null) {
-            nullCount += 2;
-          } else {
-            objectCount += 10;
-          }
-          break;
-        case "function":
-          if (value instanceof Date) {
-            dateCount += 5;
-          } else {
-            functionCount += 10;
-          }
-          break;
-        case "undefined":
-          undefinedCount += 2;
-          break;
-        case "boolean":
-          booleanCount += 4;
-          break;
-        case "string":
-          stringCount += 8;
-          break;
-      }
-    });
-    countersArray.push(
-      numberCount,
-      nullCount,
-      objectCount,
-      dateCount,
-      functionCount,
-      undefinedCount,
-      booleanCount,
-      stringCount
-    );
-    return countersArray;
-  };
-  expect(result).toEqual(expectedFn(array));
+describe("getValuesWeight()", () => {
+  it("should calculate the weights of the elements in a given array", () => {
+    const array = [
+      null,
+      { name: "Mariya" },
+      "Test",
+      6,
+      undefined,
+      false,
+      new Date(),
+    ];
+    const result = getValuesWeight(array);
+    const expectedResult = [4, 2, 20, 0, 0, 2, 4, 8];
+    expect(result).toEqual(expectedResult);
+  });
 });
 
-it("should return true or false if there is an element in the array that has the same weight as passed in the argument", () => {
-  const weight = 12;
-  const array = [6, "Test", null];
-  const result = checkForEquality(weight, array);
-  const expectedFn = (weight, array) => {
-    for (let i = 0; i < array.length; i++) {
-      if (array[i] === weight) {
-        return true;
-      }
-    }
-    return false;
-  };
-  expect(result).toBe(expectedFn(weight, array));
+describe("checkForEquality()", () => {
+  it("should return true if there is an element in the array that has the same weight as passed in the argument", () => {
+    const weight = 8;
+    const array = [4, 1];
+    const result = checkForEquality(weight, array);
+    expect(result).toBeTruthy;
+  });
+
+  it("should return false if there is an element in the array that has higher weight than passed in the argument", () => {
+    const weight = 8;
+    const array = [4, 4, "Mariya"];
+    const result = checkForEquality(weight, array);
+    expect(result).toBeFalsy;
+  });
+
+  it("should return false if there is an element in the array that has lower weight than passed in the argument", () => {
+    const weight = 12;
+    const array = [6, "Test"];
+    const result = checkForEquality(weight, array);
+    expect(result).toBeFalsy;
+  });
 });

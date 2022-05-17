@@ -36,4 +36,3 @@ export const flatten = (chosenArray: any[]): RegularObject => {
   return result;
 };
 console.log(flatten(array));
-

@@ -20,5 +20,3 @@ console.log(
   "Array with the numbers in the array, which are divisible by the chosen the number: ",
   calculateNumbersDivisible(array, DIVISIBLE_NUMBER)
 );
-
-

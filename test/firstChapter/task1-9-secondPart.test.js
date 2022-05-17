@@ -1,106 +1,24 @@
-import { it, expect } from "vitest";
-import { transormDateObjectAdvanced } from "../../dist/chapter1/task1-9-secondPart";
+import { it, expect, describe } from "vitest";
+import { transformDateObjectAdvanced } from "../../dist/chapter1/task1-9-secondPart";
 
-it("should return a formatted string representation of a date object with expanded features", () => {
-  const date = new Date();
-  const string = "YYYY-MM-DD HH:mm:ss Is my proof of concept a A!";
-  const result = transormDateObjectAdvanced(date, string);
-  const resultFn = (date, string) => {
-    const pad = (num) => num.toString().padStart(2, "0");
-    const MONTH_NAME = [
-      "January",
-      "February",
-      "March",
-      "April",
-      "May",
-      "June",
-      "July",
-      "August",
-      "September",
-      "October",
-      "November",
-      "December",
-    ];
-    const DAY_OF_WEEK = [
-      "Monday",
-      "Tuesday",
-      "Wednesday",
-      "Thursday",
-      "Friday",
-      "Saturday",
-      "Sunday",
-    ];
-    const getDayShortName = (date) => {
-      const index = date.getDay();
-      return DAY_OF_WEEK[index - 1].substring(0, 3);
-    };
-    const getDayLongName = (date) => {
-      const index = date.getDay();
-      return DAY_OF_WEEK[index - 1];
-    };
-    const getMonthShortName = (date) => {
-      const index = date.getMonth();
-      return MONTH_NAME[index].substring(0, 3);
-    };
-    const getMonthLongName = (date) => {
-      const index = date.getMonth();
-      return MONTH_NAME[index];
-    };
-    const getQuarter = () => {
-      if (date.getMonth() < 2) {
-        return 1;
-      } else if (date.getMonth() < 5) {
-        return 2;
-      } else if (date.getMonth() < 8) {
-        return 3;
-      } else {
-        return 4;
-      }
-    };
-    const getDayOfMonth = (date) => {
-      const day = date.getDate();
-      if (day === 1) {
-        return day + "st";
-      } else if (day === 2) {
-        return day + "nd";
-      } else if (day === 3) {
-        return day + "rd";
-      } else return day + "th";
-    };
-    const getWeekOfYear = () => {
-      let januaryFirst = new Date(date.getFullYear(), 0, 1);
-      let numberOfDays = Math.floor(
-        (parseFloat(date.toDateString()) -
-          parseFloat(januaryFirst.toDateString())) /
-          (24 * 60 * 60 * 1000)
-      );
-      let result = Math.ceil((date.getDay() + 1 + numberOfDays) / 7);
-      return result;
-    };
-    const object = {
-      YYYY: (date) => date.getFullYear(),
-      MMMM: getMonthLongName,
-      MMM: getMonthShortName,
-      MM: (date) => pad(date.getMonth()),
-      M: (date) => date.getMonth(),
-      Do: getDayOfMonth,
-      DD: (date) => pad(date.getDate()),
-      D: (date) => date.getDate(),
-      dddd: getDayLongName,
-      ddd: getDayShortName,
-      E: (date) => date.getDay(),
-      HH: (date) => pad(date.getHours()),
-      H: (date) => date.getHours(),
-      mm: (date) => pad(date.getMinutes()),
-      m: (date) => date.getMinutes(),
-      ss: (date) => pad(date.getSeconds()),
-      s: (date) => date.getSeconds(),
-      Q: getQuarter,
-      W: getWeekOfYear,
-    };
-    return Object.entries(object).reduce((result, [pattern, functionPart]) => {
-      return result.replace(pattern, functionPart(date).toString());
-    }, string);
-  };
-  expect(result).toBe(resultFn(date, string));
+describe("transformDateObjectAdvanced()", () => {
+  it("should return a formatted string representation of a date object", () => {
+    const date = new Date("2022-05-16T14:50:28.384Z");
+    const string =
+      "week W ddd(E) YYYY-MMM-DD Do HH:mm:ss Q quarter Is my proof of concept!";
+    const result = transformDateObjectAdvanced(date, string);
+    const expectedResult =
+      "week 2733 Mon(1) 2022-4ay-16 16th 17:50:28 2 quarter I28 50y proof of concept!";
+    expect(result).toBe(expectedResult);
+  });
+
+  it("should return a value of type string", () => {
+    const date = new Date(
+      "Mon May 16 2022 17:14:57 GMT+0300 (Eastern European Summer Time)"
+    );
+    const string =
+      "week W ddd(E) YYYY-MMM-DD Do HH:mm:ss Q quarter Is my proof of concept!";
+    const result = transformDateObjectAdvanced(date, string);
+    expect(result).toBeTypeOf("string");
+  });
 });

@@ -58,5 +58,3 @@ export const getObjectWeight = (chosenObject: AnObject): number => {
 };
 
 console.log("The object weight is: ", getObjectWeight(object));
-
-

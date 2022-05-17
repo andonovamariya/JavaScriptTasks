@@ -19,4 +19,3 @@ export const removeInnerPercentage = (
 };
 
 console.log(removeInnerPercentage(array, PERCENT));
-

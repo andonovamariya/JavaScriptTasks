@@ -15,9 +15,8 @@ interface RegularObject {
   [key: string]: number;
 }
 
-export const replaceArrayKeys = (chosenArray: any[]): RegularObject => {
-  let typesObject: RegularObject = {},
-    array: any[] = chosenArray,
+export const countTypes = (chosenArray: any[]): RegularObject => {
+  let array: any[] = chosenArray,
     nullCount = 0,
     objectsCount = 0,
     stringsCount = 0,
@@ -27,7 +26,7 @@ export const replaceArrayKeys = (chosenArray: any[]): RegularObject => {
     datesCount = 0,
     booleansCount = 0,
     functionsCount = 0;
-
+  let typesObject: RegularObject = {};
   for (let i = 0; i <= array.length; i++) {
     if (array[i] === null) {
       nullCount++;
@@ -65,5 +64,4 @@ export const replaceArrayKeys = (chosenArray: any[]): RegularObject => {
   return typesObject;
 };
 
-console.log(replaceArrayKeys(selectedArray));
-
+console.log(countTypes(selectedArray));

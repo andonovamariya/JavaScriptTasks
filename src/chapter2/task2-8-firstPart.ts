@@ -65,7 +65,7 @@ export const checkForEquality = (countersArray: number[], inputWeight: number): 
       answer = true;
     }
   }
-  if (answer) {
+  if (answer === true) {
     return true;
   } else {
     return false;
@@ -74,5 +74,3 @@ export const checkForEquality = (countersArray: number[], inputWeight: number): 
 const OBJECT_WEIGHT = getValuesWeight(array);
 console.log(OBJECT_WEIGHT);
 console.log(checkForEquality(OBJECT_WEIGHT, INPUT_WEIGHT));
-
-

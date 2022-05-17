@@ -1,27 +1,42 @@
-import { it, expect } from "vitest";
+import { it, expect, describe } from "vitest";
 import { findTheLongestWord } from "../../dist/chapter1/task1-6-secondPart";
 
-it("should return the longest word which starts with a certain letter", () => {
-  const string = "What we do in life echoes !!!!!!!!! to eternity";
-  const letter = "e";
-  const result = findTheLongestWord(string, letter);
-  const resultFn = (string, letter) => {
-    const format = /[^a-zA-Z0-9 ]/g;
-    const stringWords = string.replace(format, "").split(" ");
-    const isThereWordStartingWithPassedLetter = stringWords.some((word) =>
-      word.startsWith(letter)
-    );
-    if (isThereWordStartingWithPassedLetter) {
-      let index = stringWords.reduce((acc, curr, i) => {
-        return curr.length >= stringWords[acc].length &&
-          stringWords[i].startsWith(letter)
-          ? i
-          : acc;
-      }, 0);
-      return stringWords[index];
-    }
-    return "There is no word starting with this letter in the sentence.";
-  };
+describe("findTheLongestWord()", () => {
+  it("should return the longest word which starts with a certain letter", () => {
+    const string = "What we do in life echoes to eternity";
+    const letter = "e";
+    const result = findTheLongestWord(string, letter);
+    const expectedResult = "eternity";
 
-  expect(result).toBe(resultFn(string, letter));
+    expect(result).toBe(expectedResult);
+  });
+
+  it("should ignore symbols when finding the longest word", () => {
+    const string = "What we do e!!!!!!!!!!! in life echoes to eternity";
+    const letter = "e";
+    const result = findTheLongestWord(string, letter);
+    const expectedResult = "eternity";
+
+    expect(result).toBe(expectedResult);
+  });
+
+  it("should return a warning when no word starts with the passed letter", () => {
+    const string = "What we do in life echoes to eternity";
+    const letter = "m";
+    const result = findTheLongestWord(string, letter);
+    const expectedResult =
+      "There is no word starting with this letter in the sentence.";
+
+    expect(result).toBe(expectedResult);
+  });
+
+  it("should be case sensitive when finding the longest word", () => {
+    const string = "What we do in life echoes to eternity";
+    const letter = "E";
+    const result = findTheLongestWord(string, letter);
+    const expectedResult =
+      "There is no word starting with this letter in the sentence.";
+
+    expect(result).toBe(expectedResult);
+  });
 });

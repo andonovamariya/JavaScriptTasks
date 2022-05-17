@@ -51,7 +51,7 @@ export const checkForEquality = (countersArray, inputWeight) => {
             answer = true;
         }
     }
-    if (answer) {
+    if (answer === true) {
         return true;
     }
     else {

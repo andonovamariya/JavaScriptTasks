@@ -8,7 +8,7 @@ const array = [
     {
         name: "john.doe",
         role: "admin",
-    },
+    }
 ];
 const INPUT_WEIGHT = 12;
 export const getValuesWeight = (chosenArray) => {
@@ -55,7 +55,12 @@ export const checkForEquality = (countersArray, weight) => {
             answer = true;
         }
     }
-    return answer;
+    if (answer === true) {
+        return true;
+    }
+    else {
+        return false;
+    }
 };
 const OBJECT_WEIGHT = getValuesWeight(array);
 console.log(getValuesWeight(array));

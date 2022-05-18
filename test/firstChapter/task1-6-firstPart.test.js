@@ -5,7 +5,7 @@ import {
   findLongestWordWithReduce,
 } from "../../dist/chapter1/task1-6-firstPart";
 
-describe(findLongestWord(), () => {
+describe("findLongestWord()", () => {
   it("should ignore characters which are not letters", () => {
     const string = "What we do in life echoes !!!!!!!!! to eternity";
 
@@ -27,7 +27,7 @@ describe(findLongestWord(), () => {
       findLongestWord(string);
     };
 
-    expect(resultFn_findLongestWord).toThrow();
+    expect(resultFn_findLongestWord).toThrowError();
   });
   it("should yield an error if we pass a string, containing only whitespace to the function", () => {
     const string = " ";
@@ -40,8 +40,10 @@ describe(findLongestWord(), () => {
   });
 });
 
-describe(sortLongestWord(), () => {
+describe("sortLongestWord()", () => {
   it("should ignore characters which are not letters", () => {
+    const string = "What we do in life echoes !!!!!!!!! to eternity";
+
     const result_sortLongestWord = sortLongestWord(string);
 
     expect(result_sortLongestWord).toBe("eternity");
@@ -73,7 +75,7 @@ describe(sortLongestWord(), () => {
   });
 });
 
-describe(findLongestWordWithReduce(), () => {
+describe("findLongestWordWithReduce()", () => {
   it("should ignore characters which are not letters", () => {
     const string = "What we do in life echoes !!!!!!!!! to eternity";
 
@@ -103,7 +105,7 @@ describe(findLongestWordWithReduce(), () => {
     const result_findLongestWordWithReduce = () => {
       findLongestWordWithReduce(string);
     };
-    
+
     expect(result_findLongestWordWithReduce).toThrow();
   });
 });

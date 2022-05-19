@@ -1,6 +1,7 @@
+console.log("Diamond pattern:");
 const MAX_NUMBER: number = 7;
-
-const diamondPattern = (maxNumber: number): string => {
+diamondPattern(MAX_NUMBER);
+export function diamondPattern(maxNumber: number): void {
   let i: number,
     j: number,
     max: number = maxNumber,
@@ -30,9 +31,5 @@ const diamondPattern = (maxNumber: number): string => {
     row += "\n";
   }
 
-  return row;
-};
-
-console.log("Diamond pattern:\n", diamondPattern(MAX_NUMBER));
-
-export {};
+  console.log(row);
+}

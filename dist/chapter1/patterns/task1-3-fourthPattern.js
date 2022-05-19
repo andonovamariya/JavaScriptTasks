@@ -1,5 +1,7 @@
+console.log("Fourth pattern:");
 const MAX_NUMBER = 5;
-const fourthPattern = (maxNumber) => {
+fourthPattern(MAX_NUMBER);
+export function fourthPattern(maxNumber) {
     let row = "", i, j, k, max = maxNumber;
     for (i = 0; i <= max; i++) {
         for (j = 1; j <= max - i + 1; j++) {
@@ -19,7 +21,5 @@ const fourthPattern = (maxNumber) => {
         }
         row += "\n";
     }
-    return row;
-};
-console.log("Fourth pattern:\n", fourthPattern(MAX_NUMBER));
-export {};
+    console.log(row);
+}

@@ -132,7 +132,7 @@ Date.prototype.formatDateByString = function formatDateByString(
   };
 
   return Object.entries(dateTokens).reduce((result, [token, func]) => {
-    return result.replace(token, func(date));
+    return result.replace(token, func(date).toString());
   }, stringFormat);
 };
 

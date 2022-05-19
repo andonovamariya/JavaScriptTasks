@@ -1,6 +1,8 @@
+console.log("Seventh pattern:");
 const MAX_NUMBER: number = 5;
+seventhPattern(MAX_NUMBER);
 
-const createSpace = (n: number): string => {
+export function createSpace(n: number): string {
   let digit: number = n,
     formattedNumber: string = digit.toString();
 
@@ -12,9 +14,9 @@ const createSpace = (n: number): string => {
     return formattedNumber;
   }
   return formattedNumber;
-};
+}
 
-const seventhPattern = (maxNumber: number): string => {
+export function seventhPattern(maxNumber: number): void {
   let array: number[][] = [
     [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
     [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
@@ -60,9 +62,5 @@ const seventhPattern = (maxNumber: number): string => {
   }
   row += "\n";
 
-  return row;
-};
-
-console.log("Seventh pattern: ", seventhPattern(MAX_NUMBER));
-
-export {};
+  console.log(row);
+}

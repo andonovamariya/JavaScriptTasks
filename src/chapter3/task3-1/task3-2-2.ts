@@ -1,10 +1,10 @@
 interface Array<T> {
-  checkIfObjectIsPresentDeep(object: Person): boolean;
+  checkIfObjectIsPresentDeep(object: APerson): boolean;
 }
-interface Person {
+interface APerson {
   name: string;
 }
-const person: Person = { name: "John Doe" };
+const person: APerson = { name: "John Doe" };
 const arrayWithDifferentValues: any[] = [
   6,
   "Test",
@@ -19,9 +19,9 @@ const arrayWithDifferentValues: any[] = [
   { count: 5 },
   { name: "John Doe" },
 ];
-export const prototypeCheckIfObjectIsPresentDeep = () => {
+const prototypeCheckIfObjectIsPresentDeep = () => {
   Array.prototype.checkIfObjectIsPresentDeep =
-    function checkIfObjectIsPresentDeep(chosenObject: Person): boolean {
+    function checkIfObjectIsPresentDeep(chosenObject: APerson): boolean {
       if (!this || !chosenObject || this.length === 0) {
         return false;
       }

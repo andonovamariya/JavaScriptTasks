@@ -1,3 +1,4 @@
+"use strict";
 const person = { name: "John Doe" };
 const arrayWithDifferentValues = [
     6,
@@ -13,7 +14,7 @@ const arrayWithDifferentValues = [
     { count: 5 },
     { name: "John Doe" },
 ];
-export const prototypeCheckIfObjectIsPresentDeep = () => {
+const prototypeCheckIfObjectIsPresentDeep = () => {
     Array.prototype.checkIfObjectIsPresentDeep =
         function checkIfObjectIsPresentDeep(chosenObject) {
             if (!this || !chosenObject || this.length === 0) {

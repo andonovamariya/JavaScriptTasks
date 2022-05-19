@@ -1,6 +1,8 @@
+console.log("First pattern:");
 const MAX_NUMBER: number = 5;
+firstPattern(MAX_NUMBER);
 
-const firstPattern = (maxNumber: number): string => {
+export function firstPattern(maxNumber: number): void {
   let row: string = "",
     i: number,
     j: number,
@@ -13,9 +15,5 @@ const firstPattern = (maxNumber: number): string => {
     row += "\n";
   }
 
-  return row;
-};
-
-console.log("First pattern:\n", firstPattern(MAX_NUMBER));
-
-export {};
+  console.log(row);
+}

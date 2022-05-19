@@ -1,6 +1,8 @@
+console.log("Fourth pattern:");
 const MAX_NUMBER: number = 5;
+fourthPattern(MAX_NUMBER);
 
-const fourthPattern = (maxNumber: number): string => {
+export function fourthPattern(maxNumber: number): void {
   let row: string = "",
     i: number,
     j: number,
@@ -28,9 +30,5 @@ const fourthPattern = (maxNumber: number): string => {
     row += "\n";
   }
 
-  return row;
-};
-
-console.log("Fourth pattern:\n", fourthPattern(MAX_NUMBER));
-
-export {};
+  console.log(row);
+}

@@ -1,5 +1,7 @@
+console.log("Third pattern:");
 const MAX_NUMBER = 5;
-const thirdPattern = (maxNumber) => {
+thirdPattern(MAX_NUMBER);
+export function thirdPattern(maxNumber) {
     let row = "", i, j, max = maxNumber;
     for (i = 0; i <= max; i++) {
         for (j = 1; j <= i; j++) {
@@ -10,7 +12,5 @@ const thirdPattern = (maxNumber) => {
         }
         row += "\n";
     }
-    return row;
-};
-console.log("Third pattern:\n", thirdPattern(MAX_NUMBER));
-export {};
+    console.log(row);
+}

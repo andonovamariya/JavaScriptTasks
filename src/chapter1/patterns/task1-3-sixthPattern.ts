@@ -1,6 +1,8 @@
+console.log("Sixth pattern:");
 const MAX_NUMBER: number = 36;
+sixthPattern(MAX_NUMBER);
 
-const sixthPattern = (maxNumber: number): string => {
+export function sixthPattern(maxNumber: number): void {
   let k: number = 11,
     l: number = 28,
     i: number,
@@ -23,8 +25,5 @@ const sixthPattern = (maxNumber: number): string => {
     row += "\n";
   }
 
-  return row;
-};
-console.log("Sixth pattern:\n", sixthPattern(MAX_NUMBER));
-
-export {};
+  console.log(row);
+}

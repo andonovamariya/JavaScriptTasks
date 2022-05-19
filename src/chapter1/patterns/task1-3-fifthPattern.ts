@@ -1,6 +1,7 @@
+console.log("Fifth pattern:");
 const MAX_NUMBER: number = 16;
-
-const fifthPattern = (maxNumber: number): string => {
+fifthPattern(MAX_NUMBER);
+export function fifthPattern(maxNumber: number): void {
   let max: number = maxNumber,
     i: number,
     j: number,
@@ -21,9 +22,5 @@ const fifthPattern = (maxNumber: number): string => {
     row += "\n";
   }
 
-  return row;
-};
-
-console.log("Fifth pattern: \n", fifthPattern(MAX_NUMBER));
-
-export {};
+  console.log(row);
+}

@@ -6,9 +6,16 @@ describe("seventhPattern()", () => {
   beforeEach(() => {
     global.console.log.mockReset();
   });
+  
   it("should have called console.log() at least once", () => {
     const n = 6;
     seventhPattern(n);
     expect(console.log).toBeCalled();
+  });
+
+  it("should have called console.log() with value of type string", () => {
+    const n = 7;
+    seventhPattern(n);
+    expect(console.log).toHaveBeenCalledWith(expect.any(String));
   });
 });

@@ -13,4 +13,10 @@ describe("fourthPattern()", () => {
     fourthPattern(n);
     expect(console.log).toBeCalled();
   });
+
+  it("should have called console.log() with value of type string", () => {
+    const n = 7;
+    fourthPattern(n);
+    expect(console.log).toHaveBeenCalledWith(expect.any(String));
+  });
 });

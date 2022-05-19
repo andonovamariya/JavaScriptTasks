@@ -14,9 +14,9 @@ describe("diamondPattern()", () => {
     expect(console.log).toBeCalled();
   });
 
-  it("should have called console.log with value of type string", () => {
+  it("should have called console.log() with value of type string", () => {
     const n = 7;
     diamondPattern(n);
-    expect(console.log).toHaveBeenCalledWith(vitest.any(String));
+    expect(console.log).toHaveBeenCalledWith(expect.any(String));
   });
 });
